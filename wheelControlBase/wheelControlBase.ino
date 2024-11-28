@@ -1,4 +1,3 @@
-#include <SPI.h>
 #include "GyverStepper.h"
 
 GStepper< STEPPER2WIRE> stepper1(800, 43, 37, 14);
@@ -18,17 +17,17 @@ void setup()
   
   stepper1.invertEn(true);
   // stepper1.setMaxSpeed(1000);
-  // stepper1.setAcceleration(300);
+  stepper1.setAcceleration(0);
   stepper1.autoPower(true);
 
   stepper2.invertEn(true);
   // stepper2.setMaxSpeed(1000);
-  // stepper2.setAcceleration(300);
+  stepper2.setAcceleration(0);
   stepper2.autoPower(true);
   
   stepper3.invertEn(true);
   // stepper3.setMaxSpeed(1000);
-  // stepper3.setAcceleration(300);
+  stepper3.setAcceleration(0);
   stepper3.autoPower(true);
   stepper1.setSpeed(int_data[1]);
   stepper2.setSpeed(int_data[2]);
