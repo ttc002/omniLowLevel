@@ -1,7 +1,7 @@
 #include "GyverStepper.h"
 
-GStepper< STEPPER2WIRE> stepper1(800, 43, 37, 14);
-GStepper< STEPPER2WIRE> stepper2(800, 39, 33, 14);
+GStepper< STEPPER2WIRE> stepper1(800, 39, 33, 14);
+GStepper< STEPPER2WIRE> stepper2(800, 43, 37, 14);
 GStepper< STEPPER2WIRE> stepper3(800, 35, 41, 14);
 
 int speed1 = 0;    //speed for 1st stepper
@@ -29,16 +29,18 @@ void setup()
   // stepper3.setMaxSpeed(1000);
   stepper3.setAcceleration(0);
   stepper3.autoPower(true);
-  stepper1.setSpeed(int_data[1]);
-  stepper2.setSpeed(int_data[2]);
-  stepper3.setSpeed(int_data[3]);
+  stepper1.setSpeed(-speed1);
+  stepper2.setSpeed(-speed2);
+  stepper3.setSpeed(-speed3);
   
 }
 
 void loop()
 {
+
   if(millis()-timer>=time)
   {
+    
     stepper1.break();
     stepper2.break();
     stepper3.break();
