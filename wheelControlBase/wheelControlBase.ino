@@ -37,6 +37,10 @@ void setup()
 
 void loop()
 {
+  stepper1.tick();
+  stepper2.tick();
+  stepper3.tick();
+
   long time = millis();
 
   // Проверьте, прошло ли достаточно времени с последнего переключения состояния
@@ -54,7 +58,7 @@ if (state = 0)
 }
 else if(state=1)
 {
-    stepper1.setSpeed(speed1);
+  stepper1.setSpeed(speed1);
   stepper2.setSpeed(speed2);
   stepper3.setSpeed(speed3);
 }
