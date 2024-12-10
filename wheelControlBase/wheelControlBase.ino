@@ -43,8 +43,8 @@ void loop()
 
   if(millis()-timer>=time)
   {
-    stepper1.break();
-    stepper2.break();
-    stepper3.break();
+    stepper1.brake();
+    stepper2.brake();
+    stepper3.brake();
   }
 }
