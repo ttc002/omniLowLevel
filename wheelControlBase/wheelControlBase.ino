@@ -29,20 +29,33 @@ void setup()
   // stepper3.setMaxSpeed(1000);
   stepper3.setAcceleration(0);
   stepper3.autoPower(true);
-  stepper1.setSpeed(-speed1);
-  stepper2.setSpeed(-speed2);
-  stepper3.setSpeed(-speed3);
+
   
 }
 
 void loop()
 {
+    stepper1.tick();
+    stepper2.tick();
+    stepper3.tick();
+    for(int i = 0;i<=1000;i++)
+    {
+      if(millis()-timer>=time)
+      {
+        stepper1.setSpeed(speed1);
+        stepper2.setSpeed(speed2);
+        stepper3.setSpeed(speed3);
+        timer = millis();
 
-  if(millis()-timer>=time)
-  {
-    
-    stepper1.break();
-    stepper2.break();
-    stepper3.break();
-  }
+      }
+      if(millis()-timer>=time)
+      {
+        stepper1.setSpeed(-speed1);
+        stepper2.setSpeed(-speed2);
+        stepper3.setSpeed(-speed3);
+        timer = millis();
+
+      }
+    }
+ 
 }
