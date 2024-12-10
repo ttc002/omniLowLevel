@@ -9,6 +9,8 @@ int speed2 = -46.38;    //speed for 2nd stepper
 int speed3 = 12.42;    //speed for 3rd stepper
 long time = 10;      //time, ms
 long timer = 0;
+bool ledState = false;
+long lastBlinkTime = 0;
 void setup() 
 {
   stepper1.setRunMode(KEEP_SPEED);
@@ -35,26 +37,20 @@ void setup()
 
 void loop()
 {
-    stepper1.tick();
-    stepper2.tick();
-    stepper3.tick();
-    for(int i = 0;i>=1000;i++)
-    {
-      if(millis()-timer>=time)
-      {
-        stepper1.setSpeed(speed1);
-        stepper2.setSpeed(speed2);
-        stepper3.setSpeed(speed3);
-        timer = millis();
+  long time = millis();
 
-      }
-      if(millis()-timer>=time)
-      {
-        stepper1.setSpeed(-speed1);
-        stepper2.setSpeed(-speed2);
-        stepper3.setSpeed(-speed3);
-        timer = millis();
-      }
-    }
- 
+  // Проверьте, прошло ли достаточно времени с последнего переключения состояния
+  if (time - lastBlinkTime > time) {
+    // Переключите состояние светодиода
+    state = !state;
+    lastBlinkTime = currentTime;
+  }
+
+if (state = 0)
+{
+  stepper1.setSpeed(speed1);
+  stepper2.setSpeed(speed2);
+  stepper3.setSpeed(speed3);
+
+}
 }
