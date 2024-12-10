@@ -38,9 +38,8 @@ void loop()
     stepper1.tick();
     stepper2.tick();
     stepper3.tick();
-    for(int i = 0;i<=1000;i++)
+    for(int i = 0;i>=1000;i++)
     {
-      Serial.println("11")
       if(millis()-timer>=time)
       {
         stepper1.setSpeed(speed1);
