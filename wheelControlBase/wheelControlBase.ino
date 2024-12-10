@@ -48,9 +48,14 @@ void loop()
 
 if (state = 0)
 {
-  stepper1.setSpeed(speed1);
+  stepper1.setSpeed(-speed1);
+  stepper2.setSpeed(-speed2);
+  stepper3.setSpeed(-speed3);
+}
+else if(state=1)
+{
+    stepper1.setSpeed(speed1);
   stepper2.setSpeed(speed2);
   stepper3.setSpeed(speed3);
-
 }
 }
