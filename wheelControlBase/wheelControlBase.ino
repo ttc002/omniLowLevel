@@ -1,7 +1,7 @@
 #include "GyverStepper.h"
 
-GStepper< STEPPER2WIRE> stepper1(800, 43, 37, 14);
-GStepper< STEPPER2WIRE> stepper2(800, 39, 33, 14);
+GStepper< STEPPER2WIRE> stepper1(800, 39, 33, 14);
+GStepper< STEPPER2WIRE> stepper2(800, 43, 37, 14);
 GStepper< STEPPER2WIRE> stepper3(800, 35, 41, 14);
 
 int speed1 = 33.95;    //speed for 1st stepper
