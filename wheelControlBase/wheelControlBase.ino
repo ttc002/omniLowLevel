@@ -7,7 +7,7 @@ GStepper< STEPPER2WIRE> stepper3(800, 35, 41, 14);
 int speed1 = 33.95;    //speed for 1st stepper
 int speed2 = -46.38;    //speed for 2nd stepper
 int speed3 = 12.42; 
-long time = 0;      //time, ms
+long time = 10000;      //time, ms
 long timer = 0;
 void setup() 
 {
